@@ -1,0 +1,15 @@
+@fdk=dependencies/@fdk-0.3.0-beta/script
+@prb-test-0.6.4=dependencies/@prb-test-0.6.4
+@fdk-0.3.0-beta=dependencies/@fdk-0.3.0-beta
+@uniswap-core=dependencies/@uniswap-v2-core-1.0.1
+@uniswap-periphery=dependencies/@uniswap-v2-periphery-1.1.0-beta.0
+@solady/=dependencies/@fdk-0.3.0-beta/dependencies/solady-0.0.206/src/
+@interfaces=src/interfaces
+@uniswap-v2-core-1.0.1=dependencies/@uniswap-v2-core-1.0.1
+@uniswap-v2-periphery-1.1.0-beta.0=dependencies/@uniswap-v2-periphery-1.1.0-beta.0
+@openzeppelin/contracts/=lib/openzeppelin-contracts-upgradeable/lib/openzeppelin-contracts/contracts/
+@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
+@contracts=src
+@script=script
+@openzeppelin-contracts-upgradeable-5.0.2=dependencies/@openzeppelin-contracts-upgradeable-5.0.2
+@openzeppelin-contracts-5.0.2=dependencies/@openzeppelin-contracts-5.0.2

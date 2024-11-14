@@ -1,0 +1,651 @@
+[
+  {
+    "type": "function",
+    "name": "cancelBet",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "claimReward",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getAllBets",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct IFloppyGamble.BetInfo[]",
+        "components": [
+          {
+            "name": "requester",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tier",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetTier"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetStatus"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          { "name": "points", "type": "uint256", "internalType": "uint256" },
+          { "name": "reward", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "win", "type": "bool", "internalType": "bool" },
+          { "name": "claimed", "type": "bool", "internalType": "bool" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAsset",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBetInfoById",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct IFloppyGamble.BetInfo",
+        "components": [
+          {
+            "name": "requester",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tier",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetTier"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetStatus"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          { "name": "points", "type": "uint256", "internalType": "uint256" },
+          { "name": "reward", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "win", "type": "bool", "internalType": "bool" },
+          { "name": "claimed", "type": "bool", "internalType": "bool" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBetsByStatus",
+    "inputs": [
+      {
+        "name": "status",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetStatus"
+      }
+    ],
+    "outputs": [
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct IFloppyGamble.BetInfo[]",
+        "components": [
+          {
+            "name": "requester",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "receiver",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tier",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetTier"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum IFloppyGamble.BetStatus"
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          { "name": "points", "type": "uint256", "internalType": "uint256" },
+          { "name": "reward", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "win", "type": "bool", "internalType": "bool" },
+          { "name": "claimed", "type": "bool", "internalType": "bool" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMaxBetAmount",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMaxPointsForTier",
+    "inputs": [
+      {
+        "name": "tier",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetTier"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMinBetAmount",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMinPointsForTier",
+    "inputs": [
+      {
+        "name": "tier",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetTier"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPenaltyForCanceledBet",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPointsRangeForTier",
+    "inputs": [
+      {
+        "name": "tier",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetTier"
+      }
+    ],
+    "outputs": [
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getReward",
+    "inputs": [
+      {
+        "name": "tier",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetTier"
+      },
+      { "name": "betAmount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getSigner",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getWallet",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "placeBet",
+    "inputs": [
+      { "name": "receiver", "type": "address", "internalType": "address" },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "tier",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetTier"
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "resolveBet",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" },
+      { "name": "points", "type": "uint256", "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "signature", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "resolveBetAndClaimReward",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" },
+      { "name": "points", "type": "uint256", "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "signature", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setAsset",
+    "inputs": [
+      {
+        "name": "asset",
+        "type": "address",
+        "internalType": "contract IERC20"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setMaxBetAmount",
+    "inputs": [
+      { "name": "maxBetAmount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setMinBetAmount",
+    "inputs": [
+      { "name": "minBetAmount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPenaltyForCanceledBet",
+    "inputs": [
+      {
+        "name": "penaltyForCanceledBet",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPointsRanges",
+    "inputs": [
+      {
+        "name": "pointsRanges",
+        "type": "tuple[]",
+        "internalType": "struct IFloppyGamble.PointsRange[]",
+        "components": [
+          {
+            "name": "minPoints",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "maxPoints",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setRewardPercentages",
+    "inputs": [
+      {
+        "name": "rewardPercentages",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setSigner",
+    "inputs": [
+      { "name": "signer", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setWallet",
+    "inputs": [
+      { "name": "wallet", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "AssetUpdated",
+    "inputs": [
+      {
+        "name": "asset",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BetCanceled",
+    "inputs": [
+      {
+        "name": "requester",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BetPlaced",
+    "inputs": [
+      {
+        "name": "requester",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BetResolved",
+    "inputs": [
+      {
+        "name": "betId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "win",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MaxBetAmountUpdated",
+    "inputs": [
+      {
+        "name": "maxBetAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MinBetAmountUpdated",
+    "inputs": [
+      {
+        "name": "minBetAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PenaltyForCanceledBetUpdated",
+    "inputs": [
+      {
+        "name": "penaltyForCanceledBet",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PointsRangesUpdated",
+    "inputs": [
+      {
+        "name": "pointsRanges",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct IFloppyGamble.PointsRange[]",
+        "components": [
+          {
+            "name": "minPoints",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "maxPoints",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RewardClaimed",
+    "inputs": [
+      {
+        "name": "receiver",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RewardPercentagesUpdated",
+    "inputs": [
+      {
+        "name": "rewardPercentages",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SignerUpdated",
+    "inputs": [
+      {
+        "name": "signer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "WalletUpdated",
+    "inputs": [
+      {
+        "name": "wallet",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "BetAlreadyCanceled",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "BetAlreadyResolved",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  { "type": "error", "name": "BetDoesNotExist", "inputs": [] },
+  {
+    "type": "error",
+    "name": "BetLost",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  { "type": "error", "name": "ErrNotRequester", "inputs": [] },
+  { "type": "error", "name": "InvalidBetAmount", "inputs": [] },
+  { "type": "error", "name": "InvalidBetId", "inputs": [] },
+  {
+    "type": "error",
+    "name": "InvalidBetStatus",
+    "inputs": [
+      {
+        "name": "expected",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetStatus"
+      },
+      {
+        "name": "actual",
+        "type": "uint8",
+        "internalType": "enum IFloppyGamble.BetStatus"
+      }
+    ]
+  },
+  { "type": "error", "name": "InvalidBetTier", "inputs": [] },
+  { "type": "error", "name": "InvalidLength", "inputs": [] },
+  { "type": "error", "name": "InvalidMaxBetAmount", "inputs": [] },
+  { "type": "error", "name": "InvalidMinBetAmount", "inputs": [] },
+  { "type": "error", "name": "InvalidPenaltyForCanceledBet", "inputs": [] },
+  { "type": "error", "name": "InvalidSignature", "inputs": [] },
+  { "type": "error", "name": "NullAddress", "inputs": [] },
+  {
+    "type": "error",
+    "name": "RewardAlreadyClaimed",
+    "inputs": [
+      { "name": "betId", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  { "type": "error", "name": "SignatureExpired", "inputs": [] },
+  { "type": "error", "name": "TooSoonToCancel", "inputs": [] }
+]
